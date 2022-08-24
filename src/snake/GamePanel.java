@@ -41,6 +41,11 @@ public class GamePanel extends JPanel implements ActionListener {
 		running = true;
 		timer = new Timer(DELAY, this);
 		timer.start();
+		
+		bodyParts = 6;
+		direction = 'R';
+		fruitsEaten = 0;
+		
 	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
@@ -132,6 +137,10 @@ public class GamePanel extends JPanel implements ActionListener {
 		g.setFont(new Font("Ink Free", Font.BOLD, 75));
 		FontMetrics metrics = getFontMetrics(g.getFont());
 		g.drawString(goMessage, (SCREEN_WIDTH - metrics.stringWidth(goMessage))/2, SCREEN_HEIGHT/2);
+		g.setColor(Color.white);
+		g.setFont(new Font("Ink Free", Font.BOLD, 40));
+		FontMetrics metrics2 = getFontMetrics(g.getFont());
+		g.drawString("Score: " + fruitsEaten, (SCREEN_WIDTH - metrics2.stringWidth("Score: " + fruitsEaten))/2, g.getFont().getSize());
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
