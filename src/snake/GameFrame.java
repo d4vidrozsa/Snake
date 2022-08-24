@@ -22,28 +22,29 @@ public class GameFrame extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.pack();
-		this.setVisible(true);
+
 		this.setLocationRelativeTo(null);
-		this.setJMenuBar(menuBar);
+		
 		fileMenu = new JMenu("File");
 		settingsMenu = new JMenu("Settings");
 		helpMenu = new JMenu("Help");
 		menuBar.add(fileMenu);
 		menuBar.add(settingsMenu);
 		menuBar.add(helpMenu);
-		
+
 		
 		newGame = new JMenuItem("New Game");
 		
 		fileMenu.add(newGame);
-		
+		this.setJMenuBar(menuBar);
+		this.setVisible(true);
 		newGame.addActionListener(this);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == newGame) {
-			this.add(new GamePanel());
+			
 		}
 		
 	}

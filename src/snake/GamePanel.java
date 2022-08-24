@@ -42,10 +42,6 @@ public class GamePanel extends JPanel implements ActionListener {
 		timer = new Timer(DELAY, this);
 		timer.start();
 		
-		bodyParts = 6;
-		direction = 'R';
-		fruitsEaten = 0;
-		
 	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
